@@ -1,0 +1,27 @@
+.calculator {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  input {
+    width: 100px;
+    margin-right: 10px;
+  }
+  
+  select {
+    margin-right: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  p {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  

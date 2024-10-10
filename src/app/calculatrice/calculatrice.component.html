@@ -1,0 +1,37 @@
+<div class="calculator">
+    <h1>Calculatrice</h1>
+  
+    <!-- Premier champ pour saisir un nombre -->
+    <input type="number" [(ngModel)]="nombre1" placeholder="Nombre 1" />
+  
+    <!-- Liste déroulante pour choisir l'opération -->
+    <select [(ngModel)]="operationSymbol">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+  
+    <!-- Deuxième champ pour saisir un nombre -->
+    <input type="number" [(ngModel)]="nombre2" placeholder="Nombre 2" />
+  
+    <!-- Bouton pour effectuer le calcul -->
+    <button (click)="calculer()">Calculer</button>
+  
+   <!-- Affichage du résultat de la dernière opération -->
+  <div *ngIf="resultatEnregistre !== null">
+    <p>Dernier résultat : {{ resultatEnregistre }}</p>
+  </div>
+
+   <!-- Historique -->
+   <h2>Historique des opérations</h2>
+   <ul>
+     <li *ngFor="let item of historiqueListe,let i = index">
+       <strong>{{ item.date }}</strong>: 
+       <div> {{ item.operation }} = {{ item.resultatEnregistre }}</div>
+       <button (click)="supprimerHistorique(i)">Effacer cette entree</button> <!-- Bouton pour supprimer -->
+    </li>
+   </ul>
+
+</div>
+  
